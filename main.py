@@ -1,6 +1,7 @@
 import math
 from PIL import Image
 import os
+from pathlib import Path
 
 IMAGE_NAME = "6.m.a.DALL·E 2022-09-13 23.02.24 - fantaisy world, unreal engine 5, photo realism, octane render, megapixel"
 IMAGE_EXTENSION = "." + "png"
@@ -8,7 +9,7 @@ FOLDER_PATH = "/Users/samuel/Documents/AI photo generation/Wallpaper/Dalle2/Outp
 
 
 def main():
-    output_image = resize_one_image("/Users/samuel/Downloads")
+    output_image = resize_one_image()
     # show_output_images(output_image)
 
     # output_images = resize_folder_images("Standard ratio images")
@@ -31,10 +32,11 @@ def resize_folder_images(new_saving_folder_name=""):
     return output_images
 
 
-def resize_one_image(saving_path=FOLDER_PATH):
+def resize_one_image(saving_path=str(Path.home() / "Downloads")):
     resizing_ratio, image = find_ratio()
     output_image = resize_image(resizing_ratio, image)
     output_image.save(f"{saving_path}/{IMAGE_NAME}{IMAGE_EXTENSION}")
+    print(f"Image {IMAGE_NAME}{IMAGE_EXTENSION} has been saved in folder {saving_path}")
     return output_image
 
 
