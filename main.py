@@ -17,16 +17,17 @@ def main():
 
 
 def resize_folder_images(new_saving_folder_name=""):
-    global IMAGE_NAME
+    global IMAGE_NAME, IMAGE_EXTENSION
     output_images = []
     new_folder_path = f"{FOLDER_PATH}{new_saving_folder_name}"
 
     if new_folder_path != "":
-        os.mkdir(new_folder_path)
+        create_new_folder(new_folder_path)
 
     for file in os.listdir(FOLDER_PATH):
-        IMAGE_NAME = os.fsdecode(file).split(IMAGE_EXTENSION)[0]
-        if IMAGE_NAME != ".DS_Store" and IMAGE_NAME != new_saving_folder_name:
+        if os.path.isfile(f"{FOLDER_PATH}{file}"):
+            IMAGE_NAME = file[:len(file)-4]
+            IMAGE_EXTENSION = file[len(file)-4:]
             output_images.append(resize_one_image(f"{FOLDER_PATH}{new_saving_folder_name}"))
 
     return output_images
@@ -63,6 +64,13 @@ def resize_image(resizing_ratio: tuple[int, int], image):
 def show_output_images(*output_images):
     for output_image in output_images:
         output_image.show()
+
+
+def create_new_folder(new_folder_path, folder_number=0):
+    try:
+        os.mkdir(new_folder_path if folder_number == 0 else f"{new_folder_path}{folder_number}")
+    except OSError:
+        create_new_folder(new_folder_path, folder_number + 1)
 
 
 if __name__ == '__main__':
