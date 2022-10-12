@@ -9,9 +9,12 @@ To run the script on one image, update IMAGE_NAME, IMAGE_EXTENSION and FOLDER_PA
 
 By default, the output image will be saved in the Downloads folder.
 
-To run the script on a folder full of images, update FOLDER_PATH (and optionally, change IMAGE_EXTENSION - pay attention: the extentions of all your images have to be the same).
+To run the script on a folder full of images, update FOLDER_PATH.
 
 The output images will be saved by default in a folder named "Standard ratio images" inside the folder that stocked the initial images.
+
+### Use case
+To share images, sometimes it is required to give a standard rotio image. For example, in instagram, when publishing a post, the image has to be in a ratio : 4:5 ; 1:1 or 16:9 (up to 1.91:1). If the image is not in the compatible ratio, it will be croped (instead of having transparent pixels at the borders).
 
 ## Examples
 
