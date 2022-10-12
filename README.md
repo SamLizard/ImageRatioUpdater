@@ -2,7 +2,7 @@
 The program adds transparent pixels to the image borders in order to make it compatible with standard ratios.
 
 ### Compatibility
-The Script is only compatible with macos.
+The Script is only compatible with macOS.
 
 ### How to use it
 To run the script on one image, update IMAGE_NAME, IMAGE_EXTENSION and FOLDER_PATH to your image personal settings.
@@ -14,7 +14,7 @@ To run the script on a folder full of images, update FOLDER_PATH.
 The output images will be saved by default in a folder named "Standard ratio images" inside the folder that stocked the initial images.
 
 ### Use case
-To share images, sometimes it is required to give a standard rotio image. For example, in instagram, when publishing a post, the image has to be in a ratio : 4:5 ; 1:1 or 16:9 (up to 1.91:1). If the image is not in the compatible ratio, it will be croped (instead of having transparent pixels at the borders).
+To share images, sometimes it is required to give a standard ratio image. For example, in instagram, when publishing a post, the image has to be in a ratio : 4:5 ; 1:1 or 16:9 (up to 1.91:1). If the image is not in the compatible ratio, it will be cropped (instead of having transparent pixels at the borders).
 
 ## Examples
 
